@@ -1,3 +1,60 @@
-Modulation: ASK; Orders: 4; Input size: 30000; SNR: 1.0; BER: 18.88%
-Modulation: PSK; Orders: 4; Input size: 30000; SNR: 1.0; BER: 15.59%
-Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 1.0; BER: 16.09%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 0.1; BER: 40.42%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 0.1; BER: 37.6%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 0.1; BER: 40.93%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 0.2; BER: 34.92%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 0.2; BER: 32.78%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 0.2; BER: 35.27%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 0.3; BER: 31.71%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 0.3; BER: 29.22%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 0.3; BER: 30.81%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 0.4; BER: 28.59%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 0.4; BER: 26.41%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 0.4; BER: 28.09%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 0.5; BER: 26.29%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 0.5; BER: 23.92%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 0.5; BER: 25.28%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 0.6; BER: 23.99%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 0.6; BER: 21.75%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 0.6; BER: 22.51%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 0.7; BER: 22.73%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 0.7; BER: 20.05%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 0.7; BER: 20.94%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 0.8; BER: 21.41%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 0.8; BER: 17.98%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 0.8; BER: 18.61%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 0.9; BER: 20.21%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 0.9; BER: 17.09%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 0.9; BER: 17.48%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 1.0; BER: 18.76%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 1.0; BER: 16.15%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 1.0; BER: 16.4%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 1.1; BER: 17.82%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 1.1; BER: 14.84%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 1.1; BER: 15.71%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 1.2; BER: 16.9%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 1.2; BER: 13.51%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 1.2; BER: 14.36%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 1.3; BER: 15.84%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 1.3; BER: 12.44%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 1.3; BER: 13.64%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 1.4; BER: 15.37%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 1.4; BER: 11.9%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 1.4; BER: 12.89%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 1.5; BER: 14.67%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 1.5; BER: 10.9%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 1.5; BER: 12.43%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 1.6; BER: 13.96%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 1.6; BER: 10.36%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 1.6; BER: 11.3%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 1.7; BER: 13.35%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 1.7; BER: 9.42%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 1.7; BER: 10.58%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 1.8; BER: 13.31%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 1.8; BER: 8.93%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 1.8; BER: 10.28%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 1.9; BER: 12.39%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 1.9; BER: 8.5%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 1.9; BER: 9.61%
+Modulation: ASK; Orders: 4; Input size: 30000; SNR: 2.0; BER: 12.18%
+Modulation: PSK; Orders: 4; Input size: 30000; SNR: 2.0; BER: 7.91%
+Modulation: APSK; Amplitudes: (1.0, 2.0) Orders: (4, 4); Input size: 30000; SNR: 2.0; BER: 9.1%
