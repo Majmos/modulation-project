@@ -72,31 +72,31 @@ def modulations_testing():
                         modulation = komm.APSKModulation(orders, amplitudes, phase_offset)
                     else:
                         modulation = komm.APSKModulation(orders, amplitudes)
-                    print("------------APSK-modulation------------")
+                    # print("------------APSK-modulation------------")
                     r.write("APSK;")
                 elif arguments[0] == 'ASK':
                     orders = int(arguments[3])
                     symbol_len = math.log(orders, 2)
                     amplitudes = float(arguments[4])
                     modulation = komm.ASKModulation(orders, amplitudes)
-                    print("------------ASK-modulation------------")
+                    # print("------------ASK-modulation------------")
                     r.write("ASK;")
                 elif arguments[0] == 'PSK':
                     orders = int(arguments[3])
                     symbol_len = math.log(orders, 2)
                     amplitudes = float(arguments[4])
                     modulation = komm.PSKModulation(orders, amplitudes)
-                    print("------------PSK-modulation------------")
+                    # print("------------PSK-modulation------------")
                     r.write("PSK;")
                 else:
                     continue
                 err_sum = 0.0
                 sym_err_sum = 0.0
                 channel = komm.AWGNChannel(arguments[2])
-                modulated1 = modulation.modulate(inputs)
-                transmitted1 = channel(modulated1)
-                fig, ax1 = plt.subplots(nrows=1, ncols=1)
-                ax1.plot(np.real(transmitted1), np.imag(transmitted1), '*')
+                # modulated1 = modulation.modulate(inputs)
+                # transmitted1 = channel(modulated1)
+                # fig, ax1 = plt.subplots(nrows=1, ncols=1)
+                # ax1.plot(np.real(transmitted1), np.imag(transmitted1), '*')
                 for j in range(100):
                     modulated = modulation.modulate(inputs)
                     transmitted = channel(modulated)
@@ -120,15 +120,15 @@ def modulations_testing():
                     sym_err_sum += symbol_error_rate
                 error_rate = err_sum / 100
                 symbol_error_rate = sym_err_sum / 100
-                print(f"Symbol length: {symbol_len}")
-                print(f"Orders: {orders}")
-                print(f"Amplitudes: {amplitudes}")
-                print(f"Input size: {input_len}")
-                print(f"Signal to noise ratio: {arguments[2]}")
-                print(f"Bit error rate: {round_half_up(error_rate, 2)}%")
-                print(f"Symbol error rate: {round_half_up(symbol_error_rate, 2)}%")
+                # print(f"Symbol length: {symbol_len}")
+                # print(f"Orders: {orders}")
+                # print(f"Amplitudes: {amplitudes}")
+                # print(f"Input size: {input_len}")
+                # print(f"Signal to noise ratio: {arguments[2]}")
+                # print(f"Bit error rate: {round_half_up(error_rate, 2)}%")
+                # print(f"Symbol error rate: {round_half_up(symbol_error_rate, 2)}%")
                 r.write(f"{orders};{amplitudes};{input_len};{arguments[2]};{round_half_up(error_rate, 2)};{round_half_up(symbol_error_rate, 2)}\n")
-    plt.show()
+    # plt.show()
     f.close()
     r.close()
 
