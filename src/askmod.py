@@ -118,7 +118,7 @@ def modulations_testing():
                 # transmitted1 = channel(modulated1)
                 # fig, ax1 = plt.subplots(nrows=1, ncols=1)
                 # ax1.plot(np.real(transmitted1), np.imag(transmitted1), '*')
-                for j in range(1):
+                for j in range(100):
                     modulated = modulation.modulate(inputs)
                     transmitted = channel(modulated)
                     demodulated = modulation.demodulate(transmitted)
