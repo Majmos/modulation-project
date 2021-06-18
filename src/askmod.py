@@ -10,6 +10,26 @@ from scipy.special import erfc #erfc/Q function
 import komm
 
 
+class ReflectionChannel:
+    def __init__(self, snr=np.inf, signal_power=1.0):
+        self.snr = snr
+        self.signal_power = signal_power
+
+    def __call__(self, input_signal):
+        input_signal = np.array(input_signal)
+        reversed_input = input_signal[::-1]
+        size = input_signal.size
+        signal_power = self.signal_power
+        reflection_power = signal_power / float(self.snr)
+
+        if input_signal.dtype == np.complex128:
+            reflection = np.sqrt(reflection_power / 2) * (reversed_input + 1j * np.random.normal(size=size))
+        else:
+            reflection = np.sqrt(reflection_power) * reversed_input
+
+        return input_signal + reflection
+
+
 def round_half_up(n, decimals=0):
     multiplier = 10 ** decimals
     return math.floor(n*multiplier + 0.5) / multiplier
@@ -72,32 +92,33 @@ def modulations_testing():
                         modulation = komm.APSKModulation(orders, amplitudes, phase_offset)
                     else:
                         modulation = komm.APSKModulation(orders, amplitudes)
-                    # print("------------APSK-modulation------------")
+                    print("------------APSK-modulation------------")
                     r.write("APSK;")
                 elif arguments[0] == 'ASK':
                     orders = int(arguments[3])
                     symbol_len = math.log(orders, 2)
                     amplitudes = float(arguments[4])
                     modulation = komm.ASKModulation(orders, amplitudes)
-                    # print("------------ASK-modulation------------")
+                    print("------------ASK-modulation------------")
                     r.write("ASK;")
                 elif arguments[0] == 'PSK':
                     orders = int(arguments[3])
                     symbol_len = math.log(orders, 2)
                     amplitudes = float(arguments[4])
                     modulation = komm.PSKModulation(orders, amplitudes)
-                    # print("------------PSK-modulation------------")
+                    print("------------PSK-modulation------------")
                     r.write("PSK;")
                 else:
                     continue
                 err_sum = 0.0
                 sym_err_sum = 0.0
-                channel = komm.AWGNChannel(arguments[2])
+                # channel = komm.AWGNChannel(arguments[2])
+                channel = ReflectionChannel(snr=arguments[2])
                 # modulated1 = modulation.modulate(inputs)
                 # transmitted1 = channel(modulated1)
                 # fig, ax1 = plt.subplots(nrows=1, ncols=1)
                 # ax1.plot(np.real(transmitted1), np.imag(transmitted1), '*')
-                for j in range(100):
+                for j in range(1):
                     modulated = modulation.modulate(inputs)
                     transmitted = channel(modulated)
                     demodulated = modulation.demodulate(transmitted)
@@ -120,13 +141,13 @@ def modulations_testing():
                     sym_err_sum += symbol_error_rate
                 error_rate = err_sum / 100
                 symbol_error_rate = sym_err_sum / 100
-                # print(f"Symbol length: {symbol_len}")
-                # print(f"Orders: {orders}")
-                # print(f"Amplitudes: {amplitudes}")
-                # print(f"Input size: {input_len}")
-                # print(f"Signal to noise ratio: {arguments[2]}")
-                # print(f"Bit error rate: {round_half_up(error_rate, 2)}%")
-                # print(f"Symbol error rate: {round_half_up(symbol_error_rate, 2)}%")
+                print(f"Symbol length: {symbol_len}")
+                print(f"Orders: {orders}")
+                print(f"Amplitudes: {amplitudes}")
+                print(f"Input size: {input_len}")
+                print(f"Signal to noise ratio: {arguments[2]}")
+                print(f"Bit error rate: {round_half_up(error_rate, 2)}%")
+                print(f"Symbol error rate: {round_half_up(symbol_error_rate, 2)}%")
                 r.write(f"{orders};{amplitudes};{input_len};{arguments[2]};{round_half_up(error_rate, 2)};{round_half_up(symbol_error_rate, 2)}\n")
     # plt.show()
     f.close()
