@@ -6,7 +6,6 @@ import matplotlib
 import numpy as np #for numerical computing
 import matplotlib.pyplot as plt #for plotting functions
 from scipy.special import erfc #erfc/Q function
-
 import komm
 
 
@@ -20,7 +19,7 @@ class ReflectionChannel:
         reversed_input = input_signal[::-1]
         size = input_signal.size
         signal_power = self.signal_power
-        reflection_power = signal_power / float(self.snr)
+        reflection_power = signal_power / self.snr
 
         if input_signal.dtype == np.complex128:
             reflection = np.sqrt(reflection_power / 2) * (reversed_input + 1j * np.random.normal(size=size))
@@ -112,15 +111,16 @@ def modulations_testing():
                     continue
                 err_sum = 0.0
                 sym_err_sum = 0.0
-                # channel = komm.AWGNChannel(arguments[2])
-                channel = ReflectionChannel(snr=arguments[2])
+                snr = float(arguments[2])
+                awgn = komm.AWGNChannel(snr)
+                reflection = ReflectionChannel(snr)
                 # modulated1 = modulation.modulate(inputs)
                 # transmitted1 = channel(modulated1)
                 # fig, ax1 = plt.subplots(nrows=1, ncols=1)
                 # ax1.plot(np.real(transmitted1), np.imag(transmitted1), '*')
                 for j in range(100):
                     modulated = modulation.modulate(inputs)
-                    transmitted = channel(modulated)
+                    transmitted = awgn(reflection(modulated))
                     demodulated = modulation.demodulate(transmitted)
                     errors = 0
                     symbol_errors = 0
