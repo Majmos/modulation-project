@@ -21,10 +21,7 @@ class ReflectionChannel:
         signal_power = self.signal_power
         reflection_power = signal_power / self.snr
 
-        if input_signal.dtype == np.complex128:
-            reflection = np.sqrt(reflection_power / 2) * (reversed_input + 1j * np.random.normal(size=size))
-        else:
-            reflection = np.sqrt(reflection_power) * reversed_input
+        reflection = reflection_power * reversed_input
 
         return input_signal + reflection
 
